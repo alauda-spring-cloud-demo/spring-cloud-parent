@@ -63,13 +63,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>alauda-cloud</groupId>
-                <artifactId>alauda-cloud-microservice</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>linkme-cloud-microservice</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>alauda-cloud</groupId>
-                <artifactId>alauda-cloud-starter-microservice</artifactId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>linkme-cloud-starter-microservice</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
