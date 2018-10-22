@@ -84,6 +84,11 @@
                 <artifactId>linkme-cloud-starter-microservice</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>linkme-starter-mybatis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <!--spring cloud -->
             <dependency>
