@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.org.linkme.cloud</groupId>
+    <artifactId>linkme-cloud-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>linkme-cloud-parent</name>
+    <description>Parent For Projects Of LinkMe With Spring Cloud</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.14.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Edgware.SR4</spring-cloud.version>
+        <springfox.version>2.9.2</springfox.version>
+        <mysql.connnector.version>5.1.46</mysql.connnector.version>
+        <flyway.version>5.1.4</flyway.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <druid.starter.version>1.1.10</druid.starter.version>
+        <guava.version>23.0</guava.version>
+        <lombok.version>1.14.8</lombok.version>
+        <spring.retry.version>1.2.2.RELEASE</spring.retry.version>
+        <feign.okHttp.version>10.0.1</feign.okHttp.version>
+        <database.host>127.0.0.1</database.host>
+        <database.port>3316</database.port>
+        <database.username>root</database.username>
+        <database.password>root123456</database.password>
+        <database.name>linkme</database.name>
+        <database.driver>com.mysql.jdbc.Driver</database.driver>
+        <database.url>
+            jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
+        </database.url>
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>all</id>
+            <modules>
+                <module>config-server</module>
+                <module>eureka-server</module>
+                <module>oauth2-server</module>
+                <module>alauda-cloud-microservice</module>
+                <module>alauda-cloud-starter-microservice</module>
+                <module>user-service</module>
+                <module>todo-service</module>
+                <module>project-service</module>
+                <module>message-service</module>
+            </modules>
+        </profile>
+    </profiles>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>alauda-cloud</groupId>
+                <artifactId>alauda-cloud-microservice</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>alauda-cloud</groupId>
+                <artifactId>alauda-cloud-starter-microservice</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring-retry用于启动时连接config-server失败重试 -->
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+                <version>1.2.2.RELEASE</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+
+            <!--mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connnector.version}</version>
+            </dependency>
+
+            <!--连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.starter.version}</version>
+            </dependency>
+
+            <!--JSON序列化工具-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--google工具类-->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!--lombok简化代码-->
+            <dependency>
+                 <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--FeignClient使用OKHttpClient-->
+            <dependency>
+                <groupId>io.github.openfeign</groupId>
+                <artifactId>feign-okhttp</artifactId>
+                <version>${feign.okHttp.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <configuration>
+                        <url>${database.url}</url>
+                        <user>${database.username}</user>
+                        <password>${database.password}</password>
+                        <locations>
+                            <location>filesystem:src/main/resources/db/migration</location>
+                            <location>classpath:db/migration</location>
+                        </locations>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql.connnector.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
