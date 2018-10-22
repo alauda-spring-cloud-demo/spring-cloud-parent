@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <name>linkme-cloud-parent</name>
-    <description>Parent For Projects Of LinkMe With Spring Cloud</description>
+    <description>linkme微服务父项目</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
