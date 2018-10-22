@@ -43,11 +43,11 @@
         <tk.mybatis.springboot.version>2.0.3</tk.mybatis.springboot.version>
         <tk.mybatis.mapper.version>4.0.3</tk.mybatis.mapper.version>
         <pagehelper.version>1.2.3</pagehelper.version>
-        <database.host>127.0.0.1</database.host>
-        <database.port>3316</database.port>
-        <database.username>root</database.username>
-        <database.password>root123456</database.password>
-        <database.name>linkme</database.name>
+        <database.host>rm-2zex5iy686n21e940zo.mysql.rds.aliyuncs.com</database.host>
+        <database.port>3306</database.port>
+        <database.username>dev</database.username>
+        <database.password>QFBR8TnXhAp7AHyh</database.password>
+        <database.name>linkme_dev</database.name>
         <database.driver>com.mysql.jdbc.Driver</database.driver>
         <database.url>
             jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
