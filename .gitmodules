@@ -1,0 +1,12 @@
+[submodule "linkme-mybatis-core"]
+	path = linkme-mybatis-core
+	url = https://gitee.com/linkedme/linkme-mybatis-core.git
+[submodule "linkme-starter-mybatis"]
+	path = linkme-starter-mybatis
+	url = https://gitee.com/linkedme/linkme-starter-mybatis.git
+[submodule "linkme-cloud-microservice"]
+	path = linkme-cloud-microservice
+	url = https://gitee.com/linkedme/linkme-cloud-microservice.git
+[submodule "linkme-cloud-starter-microservice"]
+	path = linkme-cloud-starter-microservice
+	url = https://gitee.com/linkedme/linkme-cloud-starter-microservice.git
