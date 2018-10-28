@@ -55,25 +55,6 @@
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>all</id>
-            <modules>
-                <module>linkme-mybatis-core</module>
-                <module>linkme-starter-mybatis</module>
-                <module>linkme-cloud-microservice</module>
-                <module>linkme-cloud-starter-microservice</module>
-            </modules>
-        </profile>
-        <profile>
-            <id>default</id>
-            <activation>
-                <!-- 设置默认激活这个配置 -->
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
