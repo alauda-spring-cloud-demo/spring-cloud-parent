@@ -234,10 +234,10 @@
             <name>releases</name>
             <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
         </repository>
-        <repository>
+        <snapshotRepository>
             <id>rdc-snapshots</id>
             <name>snapshots</name>
             <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
-        </repository>
+        </snapshotRepository>
     </distributionManagement>
 </project>
