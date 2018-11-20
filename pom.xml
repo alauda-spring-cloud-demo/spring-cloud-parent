@@ -27,6 +27,7 @@
         <spring-cloud.version>Edgware.SR4</spring-cloud.version>
         <springfox.version>2.9.2</springfox.version>
         <mysql.connnector.version>5.1.46</mysql.connnector.version>
+        <elasticsearch.version>6.4.3</elasticsearch.version>
         <flyway.version>5.1.4</flyway.version>
         <fastjson.version>1.2.47</fastjson.version>
         <druid.starter.version>1.1.10</druid.starter.version>
@@ -185,6 +186,17 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elasticsearch.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
