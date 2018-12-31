@@ -54,11 +54,17 @@
         <database.url>
             jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
         </database.url>
+        <weixin-java-miniapp.version>3.3.1.B</weixin-java-miniapp.version>
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-miniapp</artifactId>
+                <version>${weixin-java-miniapp.version}</version>
+            </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>linkme-cloud-microservice</artifactId>
