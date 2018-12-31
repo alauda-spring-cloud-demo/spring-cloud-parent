@@ -55,6 +55,7 @@
             jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
         </database.url>
         <weixin-java-miniapp.version>3.3.1.B</weixin-java-miniapp.version>
+        <weixin-java-mp.version>3.3.1.B</weixin-java-mp.version>
         <maven.test.skip>true</maven.test.skip>
     </properties>
 
@@ -64,6 +65,11 @@
                 <groupId>com.github.binarywang</groupId>
                 <artifactId>weixin-java-miniapp</artifactId>
                 <version>${weixin-java-miniapp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>${weixin-java-mp.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
