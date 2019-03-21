@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.org.linkme.cloud</groupId>
-    <artifactId>linkme-cloud-parent</artifactId>
+    <groupId>spring-cloud-demo</groupId>
+    <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>linkme-cloud-parent</name>
-    <description>linkme微服务父项目</description>
+    <name>spring-cloud-demo</name>
+    <description>spring cloud parent project</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -45,18 +45,17 @@
         <tk.mybatis.springboot.version>2.0.3</tk.mybatis.springboot.version>
         <tk.mybatis.mapper.version>4.0.3</tk.mybatis.mapper.version>
         <pagehelper.version>1.2.3</pagehelper.version>
-        <database.host>rm-2zex5iy686n21e940zo.mysql.rds.aliyuncs.com</database.host>
+        <database.host>119.28.55.20</database.host>
         <database.port>3306</database.port>
-        <database.username>dev</database.username>
-        <database.password>QFBR8TnXhAp7AHyh</database.password>
-        <database.name>linkme_dev</database.name>
+        <database.username>root</database.username>
+        <database.password>root123456</database.password>
+        <database.name>demodb</database.name>
         <database.driver>com.mysql.jdbc.Driver</database.driver>
         <database.url>
             jdbc:mysql://${database.host}:${database.port}/${database.name}?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false
         </database.url>
-        <weixin-java-miniapp.version>3.3.1.B</weixin-java-miniapp.version>
-        <weixin-java-mp.version>3.3.1.B</weixin-java-mp.version>
         <maven.test.skip>true</maven.test.skip>
+        <powermock.version>1.7.4</powermock.version>
     </properties>
 
     <dependencyManagement>
@@ -210,6 +209,16 @@
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
                 <version>${elasticsearch.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>${powermock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-junit4</artifactId>
+                <version>${powermock.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -262,12 +271,12 @@
         <repository>
             <id>rdc-releases</id>
             <name>releases</name>
-            <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
+            <url>http://119.28.55.20:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>rdc-snapshots</id>
             <name>snapshots</name>
-            <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
+            <url>http://119.28.55.20:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
