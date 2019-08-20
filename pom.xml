@@ -15,7 +15,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.14.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!-- <relativePath/> --> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -71,6 +71,11 @@
                 <version>${weixin-java-mp.version}</version>
             </dependency>
             <dependency>
+                <groupId>spring-cloud-demo</groupId>
+                <artifactId>ms-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>linkme-cloud-microservice</artifactId>
                 <version>${project.version}</version>
@@ -94,7 +99,7 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>linkme-starter-elasticsearch</artifactId>
                 <version>${project.version}</version>
-            </dependency>
+            </dependency> -->
 
             <!--spring cloud -->
             <dependency>
@@ -268,15 +273,13 @@
         </pluginManagement>
     </build>
     <distributionManagement>
-        <repository>
-            <id>rdc-releases</id>
-            <name>releases</name>
-            <url>http://119.28.55.20:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>rdc-snapshots</id>
-            <name>snapshots</name>
-            <url>http://119.28.55.20:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <repository>
+        <id>rdc-releases</id>
+        <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
+    </repository>
+    <snapshotRepository>
+        <id>rdc-snapshots</id>
+        <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
+    </snapshotRepository>
+</distributionManagement>
 </project>
