@@ -272,14 +272,24 @@
             </plugins>
         </pluginManagement>
     </build>
+    <repositories>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
+        </repository>
+        <repository>
+            <id>rdc-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
+        </repository>
+    </repositories>
     <distributionManagement>
-    <repository>
-        <id>rdc-releases</id>
-        <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
-    </repository>
-    <snapshotRepository>
-        <id>rdc-snapshots</id>
-        <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
-    </snapshotRepository>
-</distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://repo.rdc.aliyun.com/repository/36505-release-DP4y0j/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://repo.rdc.aliyun.com/repository/36505-snapshot-V4ei0c/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
